@@ -1,156 +1,173 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Download Page</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title id="seo-title">Live Streaming Sepak Bola Hari Ini - Nonton Bola Online Gratis</title>
+    <meta id="seo-description" name="description" content="Situs live streaming sepak bola online gratis dengan kualitas HD tanpa buffering. Tonton pertandingan tim kesayanganmu malam ini di Server 1, Server 2, dan Server 3.">
+    <meta name="keywords" content="live streaming bola, nonton bola online, live bola hari ini, streaming sepak bola hd, nonton bola gratis, streaming bola tanpa buffering">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ChipStream26">
+    
+    <meta property="og:type" content="website">
+    <meta id="og-url" property="og:url" content="https://watchpildun1.vercel.app">
+    <meta id="og-title" property="og:title" content="Live Streaming Sepak Bola Hari Ini - Nonton Bola Online Gratis">
+    <meta id="og-description" property="og:description" content="Situs live streaming sepak bola online gratis dengan kualitas HD tanpa buffering.">
+    <meta id="og-image" property="og:image" content="">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta id="twitter-title" name="twitter:title" content="Live Streaming Sepak Bola Hari Ini - Nonton Bola Online Gratis">
+    <meta id="twitter-description" name="twitter:description" content="Situs live streaming sepak bola online gratis dengan kualitas HD tanpa buffering.">
+    <meta id="twitter-image" name="twitter:image" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background-color: #242424; color: #e0e0e0; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 0; margin: 0; }
+        .container { padding: 10px; max-width: 720px; margin: 0 auto; }
+        .header-wrapper { width: 100%; background-color: #000000; border-bottom: 2px solid #3a3a3a; margin-bottom: 15px; position: relative; }
+        .brand-header { max-width: 720px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 10px; box-sizing: border-box; }
+        .brand-logo { color: #ff0000; font-size: 20px; font-weight: bold; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .brand-logo span { color: #ffffff; }
+        .menu-container { position: relative; display: inline-block; }
+        .menu-icon { color: #ffffff; font-size: 20px; cursor: pointer; padding: 5px 10px; }
+        .dropdown-menu { display: none; position: absolute; right: 10px; top: 45px; background-color: #141414; min-width: 120px; border: 1px solid #3a3a3a; z-index: 1000; text-align: left; }
+        .dropdown-menu a { color: #ffffff; padding: 12px 16px; text-decoration: none; display: block; font-size: 14px; font-weight: 600; }
+        .dropdown-menu a:hover { background-color: #242424; color: #00ff66; }
+        .show { display: block; }
+        .live-banner { margin: 0 auto 15px auto; background-color: #141414; border: 1px solid #2a2a2a; border-left: 4px solid #ff0000; border-radius: 6px; padding: 14px 16px; display: flex; align-items: center; justify-content: center; }
+        .match-title { font-size: 19px; font-weight: 700; color: #ffffff; margin: 0; text-align: center; letter-spacing: 0.5px; }
+        .logo-container { width: 100%; margin: 0 auto; }
+        .single-logo { width: 100%; max-width: 100%; height: auto; border-radius: 6px 6px 0 0; border: 1px solid #2a2a2a; border-bottom: none; display: block; box-sizing: border-box; }
+        .native-player, .youtube-player, .waiting-image { margin: 0 auto; border: 1px solid #2a2a2a; border-radius: 0 0 6px 6px; max-width: 100%; width: 100%; aspect-ratio: 16/9; background: #000; display: none; box-sizing: border-box; }
+        .server-container { width: 100%; margin: 15px auto 5px auto; text-align: left; display: none; }
+        .server-grid { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn-server { flex: 1; min-width: 100px; padding: 12px; font-size: 14px; font-weight: 600; color: #bbbbbb; background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; text-transform: capitalize; }
+        .btn-server.active { background-color: #00ff66 !important; color: #000000 !important; border-color: #00ff66 !important; font-weight: bold; }
+        .status-text { font-size: 12px; color: #aaaaaa; margin: 8px 0; font-family: monospace; }
+        
+        /* STYLE CHAT ROOM */
+        .chat-container { width: 100%; margin: 15px auto 0 auto; border: 1px solid #2a2a2a; border-radius: 6px; overflow: hidden; background: #ffffff; box-sizing: border-box; }
+        .chat-header { background: #000000; padding: 10px 12px; font-size: 13px; font-weight: bold; color: #00ff66; border-bottom: 1px solid #2a2a2a; text-align: left; display: flex; justify-content: space-between; }
+        .chat-status { color: #888; font-weight: normal; font-size: 11px; }
+        .chat-wrapper { 
+            width: 100%; 
+            height: 380px; 
+            background: #ffffff; 
+            filter: invert(1) hue-rotate(180deg);
+        }
+        
+        .wa-channel-button { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin: 15px auto 10px auto; padding: 12px; background-color: #141414; color: #00ff66; border: 1px solid #00ff66; text-decoration: none; font-weight: bold; font-size: 14px; border-radius: 6px; transition: all 0.3s ease; box-sizing: border-box;}
+        .wa-channel-button:hover { background-color: #00ff66; color: #000; }
+    </style>
 </head>
 <body>
-<header class="navbar">
-  <div class="nav-left">
-    ☰
-  </div>
 
-  <div class="nav-center">
-    <img src="logo.jpg" alt="Logo">
-  </div>
-
-  <div class="nav-right">
-    🔍
-  </div>
-</header>
-  <div class="container">
-    <h1>NETFLIX MOD PREMIUM APK</h1>
-    <p class="meta">By Admin • Last Updated 01/01/2026</p>
-
-    <div class="banner">
-      <img src="GETTY-netflix.jpg" alt="App Banner">
+    <div class="header-wrapper">
+        <div class="brand-header">
+            <a href="#" class="brand-logo"><i class="fas fa-football-ball"></i> ChipStream<span>26</span></a>
+            <div class="menu-container">
+                <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+                <div id="myDropdown" class="dropdown-menu">
+                    <a href="https://mantechshop1140.blogspot.com/2026/06/home.html?m=1"><i class="fas fa-home"></i> Home</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="info">
-      <div><span>Name</span><span>Netlix</span></div>
-      <div><span>Publisher</span><span> MT</span></div>
-      <div><span>Version</span><span>v1.0.0</span></div>
-      <div><span>Size</span><span>40 MB</span></div>
-      <div><span>Updated</span><span>January 1, 2026</span></div>
+    <div class="container">
+        <div id="live-banner-box" class="live-banner">
+            <h1 id="web-match-title" class="match-title">LIVE NOW MATCH DAY</h1>
+        </div>
+
+        <div id="logo-container" class="logo-container" style="display: none;">
+            <img id="foto-atas" class="single-logo" src="" alt="Papan Skor Live Streaming">
+        </div>
+
+        <video id="player-biasa" class="native-player" controls autoplay preload="auto"></video>
+        <iframe id="player-youtube" class="youtube-player" src="" frameborder="0" allowfullscreen></iframe>
+        <img id="waiting-image" class="waiting-image" src="" alt="Waiting for next match">
+
+        <div id="server-box" class="server-container">
+            <div class="server-grid">
+                <button id="btn-server1" class="btn-server" onclick="pindahServer(1)">Server 1</button>
+                <button id="btn-server2" class="btn-server" onclick="pindahServer(2)">Server 2</button>
+                <button id="btn-server3" class="btn-server" onclick="pindahServer(3)">Server 3</button>
+            </div>
+            <div id="status-server-text" class="status-text">Playing: Server 1</div>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <span>Chat Room</span>
+                <span class="chat-status"><i class="fas fa-check-circle"></i> Chat Online</span>
+            </div>
+            <div class="chat-wrapper">
+                <iframe src="https://tlk.io/chipstream26" width="100%" height="100%" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <a href="https://whatsapp.com/channel/0029VbCrDhvBfxo9BuSvFB1o" target="_blank" class="wa-channel-button">
+            <i class="fab fa-whatsapp" style="font-size: 18px;"></i> Join WhatsApp Info Match Day
+        </a>
     </div>
 
-    <div class="download">
-      <a href="https://mantechshop1140.blogspot.com/2026/02/download-netflix.html?m=1" class="playstore">donwload</a>
-    </div>
-    <div class="download2">
-      <a href="#" class="playstore2">donwload cepat</a>
-    </div>
-<div class="description">
-  <h2>Deskripsi Aplikasi</h2>
-  <p>
-    netflix mod adalah aplikasi hiburan yang memungkinkan pengguna menikmati berbagai fitur menarik secara gratis
-    dengan tampilan sederhana dan mudah digunakan. Aplikasi ini dirancang agar ringan,
-    cepat, dan kompatibel dengan berbagai perangkat Android.
-  </p>
+    <script>
+        function toggleMenu() { document.getElementById("myDropdown").classList.toggle("show"); }
+        window.onclick = function(event) { if (!event.target.matches('.menu-icon') && !event.target.matches('.fa-bars')) { var dropdowns = document.getElementsByClassName("dropdown-menu"); for (var i = 0; i < dropdowns.length; i++) { if (dropdowns[i].classList.contains('show')) { dropdowns[i].classList.remove('show'); } } } }
 
-  <p>
-    Versi terbaru menghadirkan peningkatan performa, perbaikan bug, dan pengalaman pengguna
-    yang lebih stabil dibanding versi sebelumnya.
-  </p>
+        const playerBiasa = document.getElementById('player-biasa');
+        const playerYoutube = document.getElementById('player-youtube');
+        const waitingImg = document.getElementById('waiting-image');
+        const serverBox = document.getElementById('server-box');
+        const statusText = document.getElementById('status-server-text');
+        const btnServer1 = document.getElementById('btn-server1');
+        const btnServer2 = document.getElementById('btn-server2');
+        const btnServer3 = document.getElementById('btn-server3');
+        
+        // AKAR SOLUSI: Mengambil data lokal dari stream.json proyek Vercel Anda sendiri
+        const URL_JSON = '/stream.json?v=' + new Date().getTime();
 
-  <ul>
-    <li>✔️ Tampilan sederhana & modern</li>
-    <li>✔️ Ukuran aplikasi ringan</li>
-    <li>✔️ Mudah digunakan</li>
-    <li>✔️ Mendukung banyak perangkat</li>
-  </ul>
-</div>
-  </div>
- <div class="foto1">
-      <img src="gambar1.jpg" alt="App Banner">
-    </div>
-    <div class="description">
-    <h2>Full Movie Terbaru</h2>
-  <p>
-    Netflix merupakan platform layanan streaming digital yang menyediakan berbagai film dan serial terbaru dari berbagai belahan dunia. Melalui Netflix, pengguna dapat menikmati ribuan konten hiburan dengan beragam genre, seperti drama, action, petualangan, thriller, horor, komedi, romantis, animasi, hingga dokumenter. Konten yang tersedia mencakup film layar lebar, serial televisi, acara spesial, serta tayangan original yang diproduksi secara eksklusif oleh Netflix.
-Salah satu keunggulan utama Netflix adalah pembaruan konten yang dilakukan secara rutin. Netflix secara aktif menambahkan film dan serial terbaru, termasuk judul-judul yang sedang populer dan banyak dibicarakan. Selain itu, Netflix juga dikenal dengan Netflix Original Series dan Netflix Original Movies yang tidak dapat ditemukan di platform streaming lain, sehingga memberikan pengalaman menonton yang lebih eksklusif bagi penggunanya.
-Netflix dapat diakses melalui berbagai perangkat, seperti smartphone, tablet, laptop, komputer, dan smart TV, sehingga pengguna memiliki fleksibilitas penuh dalam menikmati hiburan kapan saja dan di mana saja. Antarmuka Netflix dirancang sederhana, modern, dan mudah digunakan, sehingga pengguna dapat dengan cepat mencari film atau serial yang diinginkan berdasarkan judul, genre, atau rekomendasi yang tersedia.
-Untuk meningkatkan kenyamanan menonton, Netflix menyediakan kualitas video yang tinggi dengan berbagai pilihan resolusi, yang dapat disesuaikan dengan kecepatan internet pengguna. Selain itu, Netflix juga mendukung subtitle dan dubbing dalam berbagai bahasa, sehingga tayangan dapat dinikmati oleh pengguna dari berbagai latar belakang bahasa dan negara.
-Netflix dilengkapi dengan sistem rekomendasi cerdas yang secara otomatis menyarankan film dan serial berdasarkan riwayat tontonan serta preferensi pengguna. Dengan fitur ini, pengguna dapat dengan mudah menemukan tayangan baru yang sesuai dengan minat mereka tanpa harus mencari secara manual.
-Dengan koleksi konten yang lengkap, pembaruan film dan serial terbaru secara konsisten, serta fitur-fitur pendukung yang memudahkan pengguna, Netflix menjadi salah satu platform streaming digital yang menawarkan pengalaman hiburan modern, praktis, dan berkualitas tinggi bagi para pecinta film dan serial.
-  </p>
-  </div>
-  <div class="foto2">
-      <img src="gambar2.jpg" alt="App Banner">
-    </div>
-    <div class="description">
-  <h2>Film indonesia subtitle</h2>
-  <p>
-    Netflix mod premium Selain menghadirkan film dan serial internasional dari berbagai negara, Netflix juga secara aktif menayangkan berbagai film Indonesia yang berkualitas. Koleksi film Indonesia yang tersedia mencakup beragam genre, seperti drama, horor, komedi, romantis, keluarga, hingga film action dan thriller. Dengan pilihan yang terus diperbarui, pengguna dapat menikmati film Indonesia terbaru maupun film-film populer yang telah dikenal luas oleh masyarakat.
-Netflix memberikan perhatian khusus terhadap kenyamanan penonton dengan menyediakan subtitle pada film-film Indonesia. Kehadiran subtitle ini membantu penonton memahami dialog dan alur cerita dengan lebih jelas, serta memudahkan penonton dari berbagai latar belakang bahasa untuk menikmati tayangan tanpa hambatan. Subtitle juga memungkinkan film Indonesia untuk ditonton oleh penonton internasional yang tertarik mengenal cerita dan budaya Indonesia.
-Melalui dukungan subtitle, film Indonesia yang ditayangkan di Netflix dapat menjangkau audiens global. Penonton dari berbagai negara dapat menikmati karya perfilman Indonesia sekaligus memahami nilai budaya, kehidupan sosial, serta cerita khas Indonesia yang disampaikan melalui film. Hal ini menjadikan Netflix sebagai platform yang berperan dalam memperluas jangkauan dan eksistensi film Indonesia di tingkat internasional.
-Selain itu, Netflix menghadirkan kualitas tayangan yang tinggi pada film-film Indonesia, baik dari segi gambar maupun suara. Dengan pilihan resolusi yang dapat disesuaikan dengan kecepatan internet pengguna, pengalaman menonton film Indonesia menjadi lebih nyaman dan menyenangkan. Pengguna dapat menonton melalui berbagai perangkat, seperti smartphone, tablet, laptop, dan smart TV, kapan saja dan di mana saja.
-Kehadiran film Indonesia bersubtitle di Netflix tidak hanya memberikan hiburan, tetapi juga menjadi bentuk dukungan terhadap industri perfilman lokal. Netflix membantu memperkenalkan karya sineas Indonesia kepada penonton yang lebih luas, sekaligus memberikan ruang bagi film Indonesia untuk berkembang dan mendapatkan apresiasi global. Dengan koleksi yang terus bertambah dan dukungan subtitle yang lengkap, Netflix menjadi platform yang menghubungkan karya film Indonesia dengan penonton dari seluruh dunia.
-  </p>
-  <div class="foto2">
-      <img src="gambar3.jpg" alt="App Banner">
-      </div>
-      <div class="description">
-  <h2>Deskripsi Aplikasi</h2>
-  <p>
-    Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
-Apk Netlix Mod Premium 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- Donwload Apk Netlix Mod 
- </p>
- <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h2 class="logo">APK<span>Mantech</span></h2>
-      <p class="follow">Ikuti kami di</p>
+        let linkServer1 = "", linkServer2 = "", linkServer3 = "";
 
-      <div class="social-icons">
-        <a href="#"><img src="logofb.png" alt="Facebook"></a>
-        <a href="#"><img src="wa.png" alt="LinkedIn"></a>
-        <a href="#"><img src="tw.png" alt="Pinterest"></a>
-        <a href="#"><img src="tele.png" alt="Twitter"></a>
-      </div>
-    </div>
+        function getYoutubeId(url) { const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/; const match = url.match(regExp); return (match && match[2].length === 11) ? match[2] : null; }
 
-    <div class="footer-links">
-      <a href="#">Tentang APKMantech</a>
-      <a href="#">Kebijakan Privasi</a>
-      <a href="#">Syarat Penggunaan</a>
-      <a href="#">Kontak</a>
-    </div>
-  </div>
+        function jalankanStream(linkUrl) {
+            if (!linkUrl || linkUrl === "-") return;
+            waitingImg.style.display = 'none'; playerYoutube.style.display = 'none'; playerBiasa.style.display = 'none'; playerYoutube.src = "";
+            const ytId = getYoutubeId(linkUrl);
+            if (ytId) { playerYoutube.src = "https://www.youtube.com/embed/" + ytId + "?autoplay=1"; playerYoutube.style.display = 'block'; } 
+            else { playerBiasa.src = linkUrl; playerBiasa.style.display = 'block'; playerBiasa.play().catch(() => console.log("Menunggu interaksi.")); }
+        }
 
-  <div class="footer-bottom">
-    © 2026. Created by APKMANTECH. All Rights Reserved.
-  </div>
-</footer>
+        function resetActiveButtons() { btnServer1.classList.remove('active'); btnServer2.classList.remove('active'); btnServer3.classList.remove('active'); }
+        function pindahServer(nomorServer) {
+            resetActiveButtons(); statusText.innerText = "Playing: Server " + nomorServer;
+            if (nomorServer === 1) { btnServer1.classList.add('active'); jalankanStream(linkServer1); } 
+            else if (nomorServer === 2) { btnServer2.classList.add('active'); jalankanStream(linkServer2); } 
+            else if (nomorServer === 3) { btnServer3.classList.add('active'); jalankanStream(linkServer3); }
+        }
+
+        // Membaca isi array stream.json berdasarkan urutan indeks barisnya
+        fetch(URL_JSON).then(res => res.json()).then(data => {
+            const linkFoto = data[0]?.trim(); 
+            linkServer1 = data[1]?.trim(); 
+            linkServer2 = data[2]?.trim(); 
+            linkServer3 = data[3]?.trim(); 
+            const linkWaiting = data[4]?.trim(); 
+            const namaTanding = data[5]?.trim(); 
+            
+            if (linkFoto) { document.getElementById('logo-container').style.display = 'block'; document.getElementById('foto-atas').src = linkFoto; }
+            if (namaTanding && namaTanding !== "-" && namaTanding.length > 2) { document.getElementById('web-match-title').innerText = namaTanding; document.title = "Live Streaming " + namaTanding; }
+            
+            const adaServer1 = linkServer1 && linkServer1 !== "-", adaServer2 = linkServer2 && linkServer2 !== "-", adaServer3 = linkServer3 && linkServer3 !== "-";
+            if (adaServer1 || adaServer2 || adaServer3) {
+                serverBox.style.display = 'block'; btnServer1.style.display = adaServer1 ? 'inline-block' : 'none'; btnServer2.style.display = adaServer2 ? 'inline-block' : 'none'; btnServer3.style.display = adaServer3 ? 'inline-block' : 'none';
+                if (adaServer1) pindahServer(1); else if (adaServer2) pindahServer(2); else if (adaServer3) pindahServer(3);
+            } else { waitingImg.src = linkWaiting; waitingImg.style.display = 'block'; }
+        }).catch(err => console.error("Gagal memuat stream.json:", err));
+    </script>
+    <script src="https://pl28832718.effectivecpmnetwork.com/e7/4b/bc/e74bbc19f610bf964916e19255640c2a.js"></script>
+    <script async="async" data-cfasync="false" src="https://pl28792256.effectivecpmnetwork.com/4a0325e2effa1590eb9d7d568de8a080/invoke.js"></script>
+    <div id="container-4a0325e2effa1590eb9d7d568de8a080"></div>
 </body>
 </html>
