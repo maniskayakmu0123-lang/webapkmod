@@ -41,8 +41,13 @@
         .native-player, .youtube-player, .waiting-image { margin: 0 auto; border: 1px solid #2a2a2a; border-radius: 0 0 6px 6px; max-width: 100%; width: 100%; aspect-ratio: 16/9; background: #000; display: none; box-sizing: border-box; }
         .server-container { width: 100%; margin: 15px auto 5px auto; text-align: left; display: none; }
         .server-grid { display: flex; gap: 10px; flex-wrap: wrap; }
-        .btn-server { flex: 1; min-width: 100px; padding: 12px; font-size: 14px; font-weight: 600; color: #bbbbbb; background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; text-transform: capitalize; }
+        .btn-server { flex: 1; min-width: 100px; padding: 12px; font-size: 14px; font-weight: 600; color: #bbbbbb; background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; text-transform: capitalize; text-decoration: none; text-align: center; box-sizing: border-box; }
         .btn-server.active { background-color: #00ff66 !important; color: #000000 !important; border-color: #00ff66 !important; font-weight: bold; }
+        
+        /* STYLE KHAS TOMBOL DIRECT LINK (KUNING/ORANYE) */
+        .btn-directlink { background-color: #ffaa00 !important; color: #000000 !important; border-color: #ffaa00 !important; }
+        .btn-directlink:hover { background-color: #e69900 !important; }
+        
         .status-text { font-size: 12px; color: #aaaaaa; margin: 8px 0; font-family: monospace; }
         
         /* STYLE CHAT ROOM */
@@ -91,6 +96,10 @@
                 <button id="btn-server1" class="btn-server" onclick="pindahServer(1)">Server 1</button>
                 <button id="btn-server2" class="btn-server" onclick="pindahServer(2)">Server 2</button>
                 <button id="btn-server3" class="btn-server" onclick="pindahServer(3)">Server 3</button>
+                
+                <!-- TOMBOL SERVER DIRECT LINK SMARTLINK ADSTERRA -->
+                <a id="btn-server4" href="https://www.effectivecpmnetwork.com/nzva5sqs8?key=7442629cd97d3df13aeb567875ee985c" target="_blank" class="btn-server btn-directlink" style="display: none;">Server 4 (Alternatif)</a>
+                <a id="btn-server5" href="https://www.effectivecpmnetwork.com/nzva5sqs8?key=7442629cd97d3df13aeb567875ee985c" target="_blank" class="btn-server btn-directlink" style="display: none;">Server 5 (HD)</a>
             </div>
             <div id="status-server-text" class="status-text">Playing: Server 1</div>
         </div>
@@ -124,6 +133,8 @@
         const btnServer1 = document.getElementById('btn-server1');
         const btnServer2 = document.getElementById('btn-server2');
         const btnServer3 = document.getElementById('btn-server3');
+        const btnServer4 = document.getElementById('btn-server4');
+        const btnServer5 = document.getElementById('btn-server5');
         
         const URL_JSON = '/stream.json?v=' + new Date().getTime();
 
@@ -160,7 +171,15 @@
             
             const adaServer1 = linkServer1 && linkServer1 !== "-", adaServer2 = linkServer2 && linkServer2 !== "-", adaServer3 = linkServer3 && linkServer3 !== "-";
             if (adaServer1 || adaServer2 || adaServer3) {
-                serverBox.style.display = 'block'; btnServer1.style.display = adaServer1 ? 'inline-block' : 'none'; btnServer2.style.display = adaServer2 ? 'inline-block' : 'none'; btnServer3.style.display = adaServer3 ? 'inline-block' : 'none';
+                serverBox.style.display = 'block'; 
+                btnServer1.style.display = adaServer1 ? 'inline-block' : 'none'; 
+                btnServer2.style.display = adaServer2 ? 'inline-block' : 'none'; 
+                btnServer3.style.display = adaServer3 ? 'inline-block' : 'none';
+                
+                // Server Direct Link otomatis muncul saat live streaming siap
+                btnServer4.style.display = 'inline-block';
+                btnServer5.style.display = 'inline-block';
+                
                 if (adaServer1) pindahServer(1); else if (adaServer2) pindahServer(2); else if (adaServer3) pindahServer(3);
             } else { waitingImg.src = linkWaiting; waitingImg.style.display = 'block'; }
         }).catch(err => console.error("Gagal memuat stream.json:", err));
