@@ -4,88 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title id="seo-title">Live Streaming Sepak Bola Hari Ini - Nonton Bola Online Gratis</title>
-    <meta id="seo-description" name="description" content="Situs live streaming sepak bola online gratis dengan kualitas HD tanpa buffering. Tonton pertandingan tim kesayanganmu malam ini di Server 1, Server 2, dan Server 3.">
-    <meta name="keywords" content="live streaming bola, nonton bola online, live bola hari ini, streaming sepak bola hd, nonton bola gratis, streaming bola tanpa buffering">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="ChipStream26">
+    <title>ChipStream26 - Watch Free Live Soccer Streams Online</title>
+    <meta name="description" content="ChipStream26 - Soccer Streams Get Every Football streams gratis kualitas HD tanpa buffering.">
     
-    <meta property="og:type" content="website">
-    <meta id="og-url" property="og:url" content="https://watchpildun1.vercel.app">
-    <meta id="og-title" property="og:title" content="Live Streaming Sepak Bola Hari Ini - Nonton Bola Online Gratis">
-    <meta id="og-description" property="og:description" content="Situs live streaming sepak bola online gratis dengan kualitas HD tanpa buffering.">
-    <meta property="og:image" content="">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta id="twitter-title" name="twitter:title" content="Live Streaming Sepak Bola Hari Ini - Nonton Bola Online Gratis">
-    <meta id="twitter-description" name="twitter:description" content="Situs live streaming sepak bola online gratis dengan kualitas HD tanpa buffering.">
-    <meta id="twitter-image" name="twitter:image" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background-color: #242424; color: #e0e0e0; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 0; margin: 0; }
-        .container { padding: 10px; max-width: 720px; margin: 0 auto; }
-        .header-wrapper { width: 100%; background-color: #000000; border-bottom: 2px solid #3a3a3a; margin-bottom: 15px; position: relative; }
-        .brand-header { max-width: 720px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 10px; box-sizing: border-box; }
-        .brand-logo { color: #ff0000; font-size: 20px; font-weight: bold; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        body { background-color: #0b1426; color: #e0e0e0; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 0; margin: 0; }
+        .container { padding: 15px; max-width: 600px; margin: 0 auto; }
+        
+        /* HEADER STYLES */
+        .header-wrapper { width: 100%; background-color: #080f1c; border-bottom: 1px solid #1a263b; position: relative; }
+        .brand-header { max-width: 600px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 15px; box-sizing: border-box; }
+        .brand-logo { color: #ff0000; font-size: 22px; font-weight: bold; display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .brand-logo span { color: #ffffff; }
-        .menu-container { position: relative; display: inline-block; }
-        .menu-icon { color: #ffffff; font-size: 20px; cursor: pointer; padding: 5px 10px; }
-        .dropdown-menu { display: none; position: absolute; right: 10px; top: 45px; background-color: #141414; min-width: 120px; border: 1px solid #3a3a3a; z-index: 1000; text-align: left; }
-        .dropdown-menu a { color: #ffffff; padding: 12px 16px; text-decoration: none; display: block; font-size: 14px; font-weight: 600; }
-        .dropdown-menu a:hover { background-color: #242424; color: #00ff66; }
-        .show { display: block; }
-        .live-banner { margin: 0 auto 15px auto; background-color: #141414; border: 1px solid #2a2a2a; border-left: 4px solid #ff0000; border-radius: 6px; padding: 14px 16px; display: flex; align-items: center; justify-content: center; }
-        .match-title { font-size: 19px; font-weight: 700; color: #ffffff; margin: 0; text-align: center; letter-spacing: 0.5px; }
-        .logo-container { width: 100%; margin: 0 auto; }
-        .single-logo { width: 100%; max-width: 100%; height: auto; border-radius: 6px 6px 0 0; border: 1px solid #2a2a2a; border-bottom: none; display: block; box-sizing: border-box; }
-        .native-player, .youtube-player, .waiting-image { margin: 0 auto; border: 1px solid #2a2a2a; border-radius: 0 0 6px 6px; max-width: 100%; width: 100%; aspect-ratio: 16/9; background: #000; display: none; box-sizing: border-box; }
-        .server-container { width: 100%; margin: 15px auto 5px auto; text-align: left; display: none; }
-        .server-grid { display: flex; gap: 10px; flex-wrap: wrap; }
-        .btn-server { flex: 1; min-width: 100px; padding: 12px; font-size: 14px; font-weight: 600; color: #bbbbbb; background-color: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; text-transform: capitalize; text-decoration: none; text-align: center; box-sizing: border-box; }
-        .btn-server.active { background-color: #00ff66 !important; color: #000000 !important; border-color: #00ff66 !important; font-weight: bold; }
         
-        .status-text { font-size: 12px; color: #aaaaaa; margin: 8px 0; font-family: monospace; }
+        /* TEXT STYLES */
+        .main-title { font-size: 28px; font-weight: 700; color: #ffffff; margin: 30px 0 10px 0; text-align: left; line-height: 1.2; }
+        .sub-title { font-size: 16px; color: #8a9bb4; margin: 0 0 30px 0; text-align: left; font-weight: normal; }
         
-        /* STYLE CHAT ROOM */
-        .chat-container { width: 100%; margin: 15px auto 0 auto; border: 1px solid #2a2a2a; border-radius: 6px; overflow: hidden; background: #ffffff; box-sizing: border-box; }
-        .chat-header { background: #000000; padding: 10px 12px; font-size: 13px; font-weight: bold; color: #00ff66; border-bottom: 1px solid #2a2a2a; text-align: left; display: flex; justify-content: space-between; }
-        .chat-status { color: #888; font-weight: normal; font-size: 11px; }
-        .chat-wrapper { 
-            width: 100%; 
-            height: 380px; 
-            background: #ffffff; 
+        /* FOOTYBITE CARD STYLE */
+        .match-link { text-decoration: none; display: block; margin-bottom: 15px; }
+        .match-card { 
+            background-color: #131f37; 
+            border: 1px solid #1c2d4e; 
+            border-radius: 8px; 
+            padding: 20px 15px; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            text-align: left;
+            transition: background 0.2s ease;
+        }
+        .match-card:hover { background-color: #1a2a4a; }
+        
+        /* LOGO BULAT KIRI DENGAN ICON BOLA */
+        .match-logo { 
+            width: 55px; 
+            height: 55px; 
+            background-color: #080f1c; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-shrink: 0;
+            color: #00ff66; /* Warna bola hijau menyala */
+            font-size: 24px;
+            box-shadow: inset 0 0 10px rgba(0, 255, 102, 0.2);
         }
         
-        .wa-channel-button { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin: 15px auto 0 auto; padding: 12px; background-color: #141414; color: #00ff66; border: 1px solid #00ff66; text-decoration: none; font-weight: bold; font-size: 14px; border-radius: 6px; transition: all 0.3s ease; box-sizing: border-box;}
-        .wa-channel-button:hover { background-color: #00ff66; color: #000; }
+        /* DETAIL TEKS TANDING */
+        .match-details { flex-grow: 1; }
+        .match-name { font-size: 18px; font-weight: 600; color: #ffffff; margin: 0 0 4px 0; }
+        .match-status { font-size: 13px; color: #8a9bb4; margin: 0; }
+        .status-live { color: #00ff66; font-weight: 600; }
 
-        /* STYLE KELOMPOK TOMBOL SERVER HD (IKLAN ADSTERRA ORANYE) */
-        .hd-servers-container {
-            display: none; /* Otomatis muncul lewat JavaScript saat streaming siap */
-            gap: 10px;
-            flex-wrap: wrap;
-            margin: 10px auto;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .btn-server-hd {
-            flex: 1;
-            min-width: 90px;
-            padding: 8px 10px;
-            background-color: #ffaa00;
-            color: #000000;
-            border: 1px solid #e69900;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 700;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .btn-server-hd:hover {
-            background-color: #e69900;
-        }
+        /* BUTTON WA */
+        .wa-channel-button { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin: 30px auto 10px auto; padding: 14px; background-color: #131f37; color: #00ff66; border: 1px solid #00ff66; text-decoration: none; font-weight: bold; font-size: 14px; border-radius: 8px; box-sizing: border-box; }
+        .wa-channel-button:hover { background-color: #00ff66; color: #000; }
     </style>
 </head>
 <body>
@@ -93,125 +68,46 @@
     <div class="header-wrapper">
         <div class="brand-header">
             <a href="#" class="brand-logo"><i class="fas fa-football-ball"></i> ChipStream<span>26</span></a>
-            <div class="menu-container">
-                <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-                <div id="myDropdown" class="dropdown-menu">
-                    <a href="https://mantechshop1140.blogspot.com/2026/06/home.html?m=1"><i class="fas fa-home"></i> Home</a>
-                </div>
-            </div>
         </div>
     </div>
 
     <div class="container">
-        <div id="live-banner-box" class="live-banner">
-            <h1 id="web-match-title" class="match-title">LIVE NOW MATCH DAY</h1>
-        </div>
+        <h1 class="main-title">Watch Free Live Soccer Streams Online</h1>
+        <p class="sub-title">ChipStream26 – Soccer Streams Get Every Football streams</p>
 
-        <div id="logo-container" class="logo-container" style="display: none;">
-            <img id="foto-atas" class="single-logo" src="" alt="Papan Skor Live Streaming">
-        </div>
-
-        <video id="player-biasa" class="native-player" controls autoplay preload="auto"></video>
-        <iframe id="player-youtube" class="youtube-player" src="" frameborder="0" allowfullscreen></iframe>
-        <img id="waiting-image" class="waiting-image" src="" alt="Waiting for next match">
-
-        <div id="server-box" class="server-container">
-            <div class="server-grid">
-                <button id="btn-server1" class="btn-server" onclick="pindahServer(1)">Server 1</button>
-                <button id="btn-server2" class="btn-server" onclick="pindahServer(2)">Server 2</button>
-                <button id="btn-server3" class="btn-server" onclick="pindahServer(3)">Server 3</button>
+        <!-- CARD BIG MATCH 1 (CONTOH LIVE NOW) -->
+        <a href="/persib-vs-persija" class="match-link">
+            <div class="match-card">
+                <div class="match-logo">
+                    <!-- Otomatis menampilkan icon bola hijau tanpa ribet link gambar -->
+                    <i class="fas fa-football-ball"></i>
+                </div>
+                <div class="match-details">
+                    <h3 class="match-name">Persib vs Persija Streams</h3>
+                    <p class="match-status"><span class="status-live"><i class="fas fa-circle" style="font-size: 8px;"></i> Live Now</span> • Klik untuk menonton</p>
+                </div>
             </div>
-            <div id="status-server-text" class="status-text">Playing: Server 1</div>
-        </div>
+        </a>
 
-        <!-- AREA CHATBOX UTAMA -->
-        <div class="chat-container">
-            <div class="chat-header">
-                <span>Chat Room</span>
-                <span class="chat-status"><i class="fas fa-check-circle"></i> Chat Online</span>
+        <!-- CARD BIG MATCH 2 (CONTOH UPCOMING) -->
+        <a href="/indonesia-vs-jepang" class="match-link">
+            <div class="match-card">
+                <div class="match-logo" style="color: #8a9bb4; box-shadow: none;">
+                    <!-- Untuk pertandingan belum mulai, icon bola otomatis berwarna abu-abu redup -->
+                    <i class="fas fa-football-ball"></i>
+                </div>
+                <div class="match-details">
+                    <h3 class="match-name">Indonesia vs Jepang Streams</h3>
+                    <p class="match-status">Malam Ini • Jam 19:00 WIB</p>
+                </div>
             </div>
-            <div class="chat-wrapper">
-                <!-- Menggunakan Tautan Resmi mntch-pildun langsung -->
-                <iframe src="https://my.cbox.ws/mntch-pildun" width="100%" height="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto"></iframe>
-            </div>
-        </div>
+        </a>
 
-        <!-- TOMBOL JOIN WHATSAPP -->
+        <!-- WA BUTTON -->
         <a href="https://whatsapp.com/channel/0029VbCrDhvBfxo9BuSvFB1o" target="_blank" class="wa-channel-button">
             <i class="fab fa-whatsapp" style="font-size: 18px;"></i> Join WhatsApp Info Match Day
         </a>
-
-        <!-- 3 TOMBOL SERVER DIRECT LINK SMARTLINK ADSTERRA BERWARNA ORANYE -->
-        <div id="hd-servers-box" class="hd-servers-container">
-            <a href="https://www.effectivecpmnetwork.com/nzva5sqs8?key=7442629cd97d3df13aeb567875ee985c" target="_blank" class="btn-server-hd">Server</a>
-            <a href="https://www.effectivecpmnetwork.com/nzva5sqs8?key=7442629cd97d3df13aeb567875ee985c" target="_blank" class="btn-server-hd">Server</a>
-            <a href="https://www.effectivecpmnetwork.com/nzva5sqs8?key=7442629cd97d3df13aeb567875ee985c" target="_blank" class="btn-server-hd">Server</a>
-        </div>
     </div>
 
-    <script>
-        function toggleMenu() { document.getElementById("myDropdown").classList.toggle("show"); }
-        window.onclick = function(event) { if (!event.target.matches('.menu-icon') && !event.target.matches('.fa-bars')) { var dropdowns = document.getElementsByClassName("dropdown-menu"); for (var i = 0; i < dropdowns.length; i++) { if (dropdowns[i].classList.contains('show')) { dropdowns[i].classList.remove('show'); } } } }
-
-        const playerBiasa = document.getElementById('player-biasa');
-        const playerYoutube = document.getElementById('player-youtube');
-        const waitingImg = document.getElementById('waiting-image');
-        const serverBox = document.getElementById('server-box');
-        const statusText = document.getElementById('status-server-text');
-        const btnServer1 = document.getElementById('btn-server1');
-        const btnServer2 = document.getElementById('btn-server2');
-        const btnServer3 = document.getElementById('btn-server3');
-        const hdServersBox = document.getElementById('hd-servers-box');
-        
-        const URL_JSON = '/stream.json?v=' + new Date().getTime();
-
-        let linkServer1 = "", linkServer2 = "", linkServer3 = "";
-
-        function getYoutubeId(url) { const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/; const match = url.match(regExp); return (match && match[2].length === 11) ? match[2] : null; }
-
-        function jalankanStream(linkUrl) {
-            if (!linkUrl || linkUrl === "-") return;
-            waitingImg.style.display = 'none'; playerYoutube.style.display = 'none'; playerBiasa.style.display = 'none'; playerYoutube.src = "";
-            const ytId = getYoutubeId(linkUrl);
-            if (ytId) { playerYoutube.src = "https://www.youtube.com/embed/" + ytId + "?autoplay=1"; playerYoutube.style.display = 'block'; } 
-            else { playerBiasa.src = linkUrl; playerBiasa.style.display = 'block'; playerBiasa.play().catch(() => console.log("Menunggu interaksi.")); }
-        }
-
-        function resetActiveButtons() { btnServer1.classList.remove('active'); btnServer2.classList.remove('active'); btnServer3.classList.remove('active'); }
-        function pindahServer(nomorServer) {
-            resetActiveButtons(); statusText.innerText = "Playing: Server " + nomorServer;
-            if (nomorServer === 1) { btnServer1.classList.add('active'); jalankanStream(linkServer1); } 
-            else if (nomorServer === 2) { btnServer2.classList.add('active'); jalankanStream(linkServer2); } 
-            else if (nomorServer === 3) { btnServer3.classList.add('active'); jalankanStream(linkServer3); }
-        }
-
-        fetch(URL_JSON).then(res => res.json()).then(data => {
-            const linkFoto = data[0]?.trim(); 
-            linkServer1 = data[1]?.trim(); 
-            linkServer2 = data[2]?.trim(); 
-            linkServer3 = data[3]?.trim(); 
-            const linkWaiting = data[4]?.trim(); 
-            const namaTanding = data[5]?.trim(); 
-            
-            if (linkFoto) { document.getElementById('logo-container').style.display = 'block'; document.getElementById('foto-atas').src = linkFoto; }
-            if (namaTanding && namaTanding !== "-" && namaTanding.length > 2) { document.getElementById('web-match-title').innerText = namaTanding; document.title = "Live Streaming " + namaTanding; }
-            
-            const adaServer1 = linkServer1 && linkServer1 !== "-", adaServer2 = linkServer2 && linkServer2 !== "-", adaServer3 = linkServer3 && linkServer3 !== "-";
-            if (adaServer1 || adaServer2 || adaServer3) {
-                serverBox.style.display = 'block'; 
-                btnServer1.style.display = adaServer1 ? 'inline-block' : 'none'; 
-                btnServer2.style.display = adaServer2 ? 'inline-block' : 'none'; 
-                btnServer3.style.display = adaServer3 ? 'inline-block' : 'none';
-                
-                // 3 Server HD Oranye otomatis muncul bersamaan saat live streaming siap
-                hdServersBox.style.display = 'flex';
-                
-                if (adaServer1) pindahServer(1); else if (adaServer2) pindahServer(2); else if (adaServer3) pindahServer(3);
-            } else { waitingImg.src = linkWaiting; waitingImg.style.display = 'block'; }
-        }).catch(err => console.error("Gagal memuat stream.json:", err));
-    </script>
-    <script src="https://pl30270388.effectivecpmnetwork.com/f6/04/48/f6044884d21156fe8f195699e1c4f11e.js"></script>
-    <script async="async" data-cfasync="false" src="https://pl30270387.effectivecpmnetwork.com/fcdf67528a875e8a02ffa5acde8e957f/invoke.js"></script>
-<div id="container-fcdf67528a875e8a02ffa5acde8e957f"></div>
 </body>
 </html>
